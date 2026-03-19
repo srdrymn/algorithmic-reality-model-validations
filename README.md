@@ -56,7 +56,8 @@ algorithmic-reality-model-validations/
 | Script | Description |
 |--------|-------------|
 | `prediction_94_subtick_correlation.py` | Simulation of sub-tick correlation plateaus |
-| `prediction_94_simulation.png` | Three-panel output figure |
+
+![Sub-tick correlation plateaus — 5 GHz transmon under Lindblad dephasing](p1_algorithmic_theory_of_reality/prediction_94_simulation.png)
 
 ### [`p2_holographic_dark_energy/`](p2_holographic_dark_energy/)
 
@@ -107,9 +108,12 @@ algorithmic-reality-model-validations/
 |--------|-------------|
 | `simulate_double_slit.py` | Full lattice double-slit simulation |
 | `generate_figures.py` | Figure generation script |
-| `fig1_interference_patterns.png` | Interference pattern output |
-| `fig2_entropy_growth.png` | Entropy evolution output |
-| `fig3_wavefunction_snapshot.png` | Wavefunction visualization |
+
+![Interference patterns at different Z-scales](p7_double_slit_simulation/fig1_interference_patterns.png)
+
+![Entropy growth under measurement](p7_double_slit_simulation/fig2_entropy_growth.png)
+
+![Wavefunction snapshot](p7_double_slit_simulation/fig3_wavefunction_snapshot.png)
 
 ### [`p8_hilbert_space/`](p8_hilbert_space/)
 
@@ -131,9 +135,12 @@ algorithmic-reality-model-validations/
 | `atr_full_chain_audit.py` | Full derivation chain audit (axioms → curvature) |
 | `p9_deep_audit.py` | Deep consistency audit |
 | `html_simulations/` | Interactive browser-based simulations |
-| `exp1_time_dilation.png` | Time dilation output |
-| `exp2_lensing.png` | Gravitational lensing output |
-| `exp3_black_hole.png` | Black hole formation output |
+
+![Emergent time dilation from QFIM geometry](p9_emergent_spacetime/exp1_time_dilation.png)
+
+![Emergent gravitational lensing](p9_emergent_spacetime/exp2_lensing.png)
+
+![Black hole formation and thermodynamics](p9_emergent_spacetime/exp3_black_hole.png)
 
 ### [`p10_algorithmic_reality_model/`](p10_algorithmic_reality_model/)
 
@@ -256,11 +263,11 @@ algorithmic-reality-model-validations/
 
 **Generated figures:**
 
-| Figure | Description |
-|--------|-------------|
-| `selective_attention_cost.png` | Erasure cost ratio and thermodynamic savings vs system size |
-| `emergent_curvature.png` | Entanglement, QFIM metric, metric perturbation δg, and Ricci scalar profiles |
-| `singularity_resolution.png` | Curvature, entropy, metric, and energy gap saturation vs coupling strength |
+![Selective attention is always thermodynamically cheaper — erasure cost ratio and savings vs system size](p10_algorithmic_reality_model/selective_attention_cost.png)
+
+![Emergent curvature from data condensation — entanglement, QFIM metric, metric perturbation δg, and Ricci scalar](p10_algorithmic_reality_model/emergent_curvature.png)
+
+![Singularity resolution — curvature, entropy, metric, and energy gap saturation vs coupling strength](p10_algorithmic_reality_model/singularity_resolution.png)
 
 ---
 
