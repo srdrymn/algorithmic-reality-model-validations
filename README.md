@@ -273,12 +273,12 @@ algorithmic-reality-model-validations/
 
 ### [`p11_data_condensation_mergers/`](p11_data_condensation_mergers/)
 
-**ARM J-Field Dynamics: N-Body Data Condensation Mergers.** Demonstrates the immense computational power of the ARM framework. Simulates a binary data condensation merger, an N-body cluster (up to 100 nodes), and a network-latency-driven merger system using the scalar clock-rate field $J(x,y)$. ARM does not need to solve General Relativity — no Einstein equations, no tensors, no PDEs. The J-field is a simple algebraic sum that completely replaces the 10 coupled non-linear PDEs of GR. Shows that ARM computes a 100-node cluster on a single workstation ~10¹¹× faster than numerical relativity supercomputers can compute a binary. The latency merger script demonstrates retarded-potential orbital decay, Zeno aggregation, and exact informational load conservation — all emergent from pure ARM mechanics.
+**ARM J-Field Dynamics: N-Body Data Condensation Mergers.** Computational validation of the ARM framework for multi-body data condensation dynamics. Simulates a binary merger, an N-body cluster (up to 100 nodes), and a network-latency-driven merger system using the scalar clock-rate field J(x,y). Important transparency: in the weak-field limit, the ARM dynamical equation reduces to Newtonian gravity; the inspiral coefficient κ = 64/5 matches the GR quadrupole formula (Peters 1964); and the ringdown parameters match the Schwarzschild QNM values (Leaver 1985). These correspondences are expected — ARM derives Newtonian gravity and GR as limiting cases. The contribution is conceptual: reproducing standard dynamics from a scalar field defined by informational axioms, without tensor equations.
 
 | Script | Checks | Description |
 |--------|--------|-------------|
 | `arm_binary_merger.py` | 6 | Simulates binary inspiral, chirp waveform extraction, and merger |
-| `arm_nbody_cluster.py` | 5 | Solves 100-node cluster in ~100ms, O(N²) scaling |
+| `arm_nbody_cluster.py` | 5 | 100-node cluster, O(N²) scaling confirmation |
 | `arm_nbody_latency_merger.py` | 7 | Network latency retardation + Zeno aggregation — inspiral decay, informational load conservation, energy dissipation |
 
 **Generated figures:**
@@ -309,6 +309,7 @@ algorithmic-reality-model-validations/
 | P8 | [Why Complex Numbers? Deriving the Hilbert Space Structure from the Zeno Threshold](https://doi.org/10.5281/zenodo.19095238) | [10.5281/zenodo.19095238](https://doi.org/10.5281/zenodo.19095238) |
 | P9 | [Emergent Lorentzian Spacetime from Informational Geometry — Unifying the QFIM Spatial Metric with Tomita-Takesaki Temporal Flow](https://doi.org/10.5281/zenodo.19104254) | [10.5281/zenodo.19104254](https://doi.org/10.5281/zenodo.19104254) |
 | P10 | [The Algorithmic Reality Model: Unifying Quantum Mechanics and General Relativity via the Zeno Threshold and Thermodynamic Graph Routing](https://doi.org/10.5281/zenodo.19111233) | [10.5281/zenodo.19111233](https://doi.org/10.5281/zenodo.19111233) |
+| P11 | [Multi-Body Data Condensation Dynamics in the Algorithmic Reality Model: Computational Validation of J-Field N-Body Mergers](https://doi.org/10.5281/zenodo.19117800) | [10.5281/zenodo.19117800](https://doi.org/10.5281/zenodo.19117800) |
 
 ---
 
