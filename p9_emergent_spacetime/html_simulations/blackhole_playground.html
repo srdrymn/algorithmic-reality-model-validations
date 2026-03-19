@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATR Black Hole Simulator — Interactive Playground</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a1a;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  .header {
+    text-align: center;
+    padding: 30px 20px 10px;
+    background: linear-gradient(180deg, #0f0f2a 0%, #0a0a1a 100%);
+    border-bottom: 1px solid #1a1a3e;
+  }
+  .header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00ccff, #6666ff, #ff6600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+  }
+  .header p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 6px;
+    font-weight: 300;
+  }
+
+  .main-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .canvas-panel {
+    flex: 1 1 700px;
+    min-width: 500px;
+  }
+  .canvas-wrapper {
+    position: relative;
+    background: #050510;
+    border: 1px solid #1a1a3e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,100,255,0.08);
+  }
+  canvas {
+    display: block;
+    width: 100%;
+    cursor: crosshair;
+  }
+
+  .controls-panel {
+    flex: 0 0 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    background: #0f0f25;
+    border: 1px solid #1a1a3e;
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .card h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #6666ff;
+    margin-bottom: 14px;
+  }
+
+  .slider-group {
+    margin-bottom: 14px;
+  }
+  .slider-group label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: #aaa;
+    margin-bottom: 5px;
+  }
+  .slider-group label span {
+    color: #00ccff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+  }
+  input[type="range"] {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    background: #1a1a3e;
+    border-radius: 2px;
+    outline: none;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px; height: 16px;
+    background: #00ccff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,204,255,0.5);
+  }
+
+  .btn-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #1a1a3e;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .btn:hover { background: #2a2a5e; border-color: #6666ff; }
+  .btn.primary { background: #0044aa; border-color: #0066ff; }
+  .btn.primary:hover { background: #0055cc; }
+  .btn.danger { background: #660000; border-color: #aa0000; }
+  .btn.danger:hover { background: #880000; }
+
+  .telemetry {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #aaa;
+  }
+  .telemetry .val { color: #00ccff; }
+  .telemetry .warn { color: #ff4444; }
+  .telemetry .ok { color: #00ff88; }
+
+  .log-box {
+    max-height: 180px;
+    overflow-y: auto;
+    background: #05050f;
+    border: 1px solid #1a1a3e;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: #666;
+  }
+  .log-box .breach {
+    color: #ff4444;
+    font-weight: 500;
+  }
+
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.75rem;
+    margin-top: 10px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .status-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: #0a0a1a;
+    border-top: 1px solid #1a1a3e;
+    font-size: 0.75rem;
+    color: #666;
+    font-family: 'JetBrains Mono', monospace;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  .status-bar .pill {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .status-bar .running { background: #003300; color: #00ff88; }
+  .status-bar .paused { background: #333300; color: #ffcc00; }
+
+  @media (max-width: 900px) {
+    .main-container { flex-direction: column; }
+    .controls-panel { flex: 1 1 auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>ATR Black Hole Simulator</h1>
+  <p>Interactive Playground — Dynamic Horizon Emergence via Z<sub>α</sub> Truncation</p>
+</div>
+
+<div class="main-container">
+  <!-- Canvas -->
+  <div class="canvas-panel">
+    <div class="canvas-wrapper">
+      <canvas id="sim" width="800" height="800"></canvas>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#ff4400"></div> High J (fast clock)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#220000"></div> Low J (frozen)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#00ccff"></div> |ψ|² wavepacket</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ff0000"></div> Z<sub>α</sub> breach</div>
+      <div class="legend-item"><div class="legend-dot" style="background:rgba(255,255,0,0.7);border:1px solid #aa8800"></div> Centroid trail</div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls-panel">
+    <div class="card">
+      <h3>⚙ Physics Parameters</h3>
+      <div class="slider-group">
+        <label>Information Mass M <span id="v-mass">3.0</span></label>
+        <input type="range" id="s-mass" min="0.5" max="10" step="0.1" value="3.0">
+      </div>
+      <div class="slider-group">
+        <label>Clock Coupling κ <span id="v-kappa">1.5</span></label>
+        <input type="range" id="s-kappa" min="0.1" max="5" step="0.1" value="1.5">
+      </div>
+      <div class="slider-group">
+        <label>Zeno Threshold Z<sub>α</sub> <span id="v-zalpha">0.80</span></label>
+        <input type="range" id="s-zalpha" min="0.1" max="1.5" step="0.01" value="0.80">
+      </div>
+      <div class="slider-group">
+        <label>Wavepacket Speed <span id="v-speed">0.70</span></label>
+        <input type="range" id="s-speed" min="0.1" max="2.0" step="0.05" value="0.70">
+      </div>
+      <div class="slider-group">
+        <label>Wavepacket Width σ <span id="v-sigma">5.0</span></label>
+        <input type="range" id="s-sigma" min="2" max="15" step="0.5" value="5.0">
+      </div>
+      <div class="btn-row">
+        <button class="btn primary" id="btn-play">▶ Play</button>
+        <button class="btn" id="btn-step">Step</button>
+        <button class="btn danger" id="btn-reset">↻ Reset</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📊 Live Telemetry</h3>
+      <div class="telemetry" id="telemetry">
+        <div>Frame: <span class="val" id="t-frame">0</span></div>
+        <div>||ψ||²: <span class="ok" id="t-norm">1.0000</span></div>
+        <div>Centroid r: <span class="val" id="t-centroid">—</span> px</div>
+        <div>J at center: <span class="val" id="t-jcenter">—</span></div>
+        <div>Breaches: <span class="warn" id="t-breaches">0</span></div>
+        <div>Total δQ: <span class="val" id="t-heat">0.000000</span></div>
+        <div>Total dS: <span class="val" id="t-entropy">0.000000</span> nats</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📜 Event Log</h3>
+      <div class="log-box" id="log-box"></div>
+    </div>
+
+    <div class="card">
+      <h3>ℹ How It Works</h3>
+      <p style="font-size:0.78rem;color:#888;line-height:1.5">
+        A central Information Mass <b>M</b> generates processing load Φ = M/r.
+        The rendering engine slows the local clock: <b>J = J₀·exp(−κΦ)</b>.
+        A Gaussian wavepacket (blue glow) is fired toward the mass.
+        When the total load exceeds <b>Z<sub>α</sub></b>, Born Rule truncation fires —
+        the node is erased and Landauer heat δQ = T<sub>mod</sub>·dS is dissipated.
+        <br><br>
+        <b>Click anywhere</b> on the canvas to launch a new wavepacket from that position.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="status-bar">
+  <span id="status-pill" class="pill paused">PAUSED</span>
+  <span>ATR Black Hole Playground</span>
+  <span style="margin-left:auto">Sparse Hermitian H · Unitary Evolution · Landauer Telemetry</span>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  ATR BLACK HOLE SIMULATOR — JavaScript Canvas Engine
+// ═══════════════════════════════════════════════════════════════
+
+const canvas = document.getElementById('sim');
+const ctx = canvas.getContext('2d');
+const W = canvas.width, H = canvas.height;
+
+// Grid resolution (lower than Python for real-time)
+const NX = 200, NY = 200;
+const cellW = W / NX, cellH = H / NY;
+const XC = NX / 2, YC = NY / 2;
+
+// State
+let running = false;
+let frame = 0;
+let totalHeat = 0, totalEntropy = 0, breachCount = 0;
+let centroidTrail = [];
+let logEntries = [];
+
+// Physics arrays
+let J = new Float64Array(NX * NY);
+let Phi = new Float64Array(NX * NY);
+let psiRe = new Float64Array(NX * NY);
+let psiIm = new Float64Array(NX * NY);
+let prob = new Float64Array(NX * NY);
+let breachTimer = new Float64Array(NX * NY); // Transient spark timer (fades 255→0)
+let dampingMask = new Float64Array(NX * NY);
+
+// ── Absorbing Boundary (Sponge Layer / PML) ─────────────
+function initDampingMask() {
+  const edge = 15;
+  for (let x = 0; x < NX; x++) {
+    for (let y = 0; y < NY; y++) {
+      const k = y * NX + x;
+      const distX = Math.min(x, NX - 1 - x);
+      const distY = Math.min(y, NY - 1 - y);
+      const minDist = Math.min(distX, distY);
+      if (minDist < edge) {
+        const factor = minDist / edge;
+        dampingMask[k] = 0.95 + 0.05 * Math.sin(factor * Math.PI / 2);
+      } else {
+        dampingMask[k] = 1.0;
+      }
+    }
+  }
+}
+
+// ── Parameter getters ────────────────────────────────────
+function getParams() {
+  return {
+    mass:  parseFloat(document.getElementById('s-mass').value),
+    kappa: parseFloat(document.getElementById('s-kappa').value),
+    zalpha: parseFloat(document.getElementById('s-zalpha').value),
+    speed: parseFloat(document.getElementById('s-speed').value),
+    sigma: parseFloat(document.getElementById('s-sigma').value),
+  };
+}
+
+// ── Build J-field from Information Mass ──────────────────
+function buildJField() {
+  const p = getParams();
+  const j0 = 0.5;
+  for (let x = 0; x < NX; x++) {
+    for (let y = 0; y < NY; y++) {
+      const k = y * NX + x;
+      const r = Math.max(0.5, Math.sqrt((x - XC)**2 + (y - YC)**2));
+      Phi[k] = p.mass / r;
+      J[k] = j0 * Math.exp(-p.kappa * Phi[k]);
+    }
+  }
+}
+
+// ── Initialise wavepacket ────────────────────────────────
+function initWavepacket(x0, y0) {
+  const p = getParams();
+  const sigma = p.sigma;
+  const dx = x0 - XC, dy = y0 - YC;
+  const dist = Math.max(1, Math.sqrt(dx*dx + dy*dy));
+  // Momentum toward center
+  const kx = -p.speed * dx / dist;
+  const ky = -p.speed * dy / dist;
+
+  let norm2 = 0;
+  for (let x = 0; x < NX; x++) {
+    for (let y = 0; y < NY; y++) {
+      const k = y * NX + x;
+      const gauss = Math.exp(-((x-x0)**2 + (y-y0)**2) / (2*sigma*sigma));
+      const phase = kx * x + ky * y;
+      psiRe[k] = gauss * Math.cos(phase);
+      psiIm[k] = gauss * Math.sin(phase);
+      norm2 += psiRe[k]**2 + psiIm[k]**2;
+    }
+  }
+  // Normalise
+  const invNorm = 1.0 / Math.sqrt(norm2);
+  for (let k = 0; k < NX*NY; k++) {
+    psiRe[k] *= invNorm;
+    psiIm[k] *= invNorm;
+  }
+}
+
+// ── Evolution: Visscher's Staggered Leapfrog ─────────────
+// Symplectic integrator: update Re in-place, then Im using NEW Re.
+// Conditionally stable (unlike FTCS which is unconditionally unstable).
+function evolveStep(dt) {
+  // STEP 1: Update REAL part using current IMAGINARY part
+  for (let x = 1; x < NX-1; x++) {
+    for (let y = 1; y < NY-1; y++) {
+      const k = y * NX + x;
+      const jk = J[k];
+      const jAvgR = (jk + J[k + 1]) * 0.5;
+      const jAvgL = (jk + J[k - 1]) * 0.5;
+      const jAvgU = (jk + J[k + NX]) * 0.5;
+      const jAvgD = (jk + J[k - NX]) * 0.5;
+
+      const lapIm = jAvgR * psiIm[k+1] + jAvgL * psiIm[k-1]
+                   + jAvgU * psiIm[k+NX] + jAvgD * psiIm[k-NX]
+                   - (jAvgR + jAvgL + jAvgU + jAvgD) * psiIm[k];
+
+      // Update Re IN PLACE (using current Im)
+      psiRe[k] = psiRe[k] - dt * lapIm;
+    }
+  }
+
+  // STEP 2: Update IMAGINARY part using the NEW REAL part
+  for (let x = 1; x < NX-1; x++) {
+    for (let y = 1; y < NY-1; y++) {
+      const k = y * NX + x;
+      const jk = J[k];
+      const jAvgR = (jk + J[k + 1]) * 0.5;
+      const jAvgL = (jk + J[k - 1]) * 0.5;
+      const jAvgU = (jk + J[k + NX]) * 0.5;
+      const jAvgD = (jk + J[k - NX]) * 0.5;
+
+      // Reading from the NEWLY UPDATED psiRe array
+      const lapRe = jAvgR * psiRe[k+1] + jAvgL * psiRe[k-1]
+                   + jAvgU * psiRe[k+NX] + jAvgD * psiRe[k-NX]
+                   - (jAvgR + jAvgL + jAvgU + jAvgD) * psiRe[k];
+
+      // Update Im IN PLACE (using new Re)
+      psiIm[k] = psiIm[k] + dt * lapRe;
+    }
+  }
+}
+
+// ── Z_α truncation ───────────────────────────────────────
+function zenoTruncation() {
+  const p = getParams();
+  const phiMax = p.mass / 0.5; // max Phi at center
+  let truncNodes = 0, probErased = 0, dS = 0;
+
+  // Decay all existing sparks (Option 1: transient embers)
+  for (let k = 0; k < NX * NY; k++) {
+    if (breachTimer[k] > 0) breachTimer[k] = Math.max(0, breachTimer[k] - 10);
+  }
+
+  for (let k = 0; k < NX*NY; k++) {
+    prob[k] = psiRe[k]**2 + psiIm[k]**2;
+    const phiNorm = Phi[k] / phiMax;
+    const load = phiNorm + prob[k] * NX * NY * 0.1;
+
+    if (load > p.zalpha && prob[k] > 1e-12) {
+      const p_k = prob[k];
+      probErased += p_k;
+      if (p_k > 1e-15) dS += -p_k * Math.log(p_k);
+      psiRe[k] = 0;
+      psiIm[k] = 0;
+      breachTimer[k] = 255; // Flash! Will fade over ~25 frames
+      truncNodes++;
+    }
+  }
+
+  if (truncNodes > 0) {
+    // Renormalise
+    let norm2 = 0;
+    for (let k = 0; k < NX*NY; k++) norm2 += psiRe[k]**2 + psiIm[k]**2;
+    if (norm2 > 0) {
+      const inv = 1.0 / Math.sqrt(norm2);
+      for (let k = 0; k < NX*NY; k++) { psiRe[k] *= inv; psiIm[k] *= inv; }
+    }
+
+    const jAtCenter = J[Math.floor(YC) * NX + Math.floor(XC)];
+    const tMod = 1.0 / Math.max(jAtCenter, 1e-10);
+    const dQ = tMod * dS;
+
+    totalHeat += dQ;
+    totalEntropy += dS;
+    breachCount++;
+
+    addLog(`⚠ Z-SCALE BREACH [frame ${frame}] — ${truncNodes} node(s), δQ=${dQ.toFixed(4)}`);
+  }
+}
+
+// ── Compute centroid ─────────────────────────────────────
+function computeCentroid() {
+  let sumP = 0, sumX = 0, sumY = 0;
+  for (let x = 0; x < NX; x++) {
+    for (let y = 0; y < NY; y++) {
+      const k = y * NX + x;
+      const p = psiRe[k]**2 + psiIm[k]**2;
+      sumP += p; sumX += x * p; sumY += y * p;
+    }
+  }
+  if (sumP > 0) return { x: sumX/sumP, y: sumY/sumP, r: Math.sqrt((sumX/sumP-XC)**2 + (sumY/sumP-YC)**2) };
+  return { x: XC, y: YC, r: 0 };
+}
+
+// ── Rendering ────────────────────────────────────────────
+function render() {
+  const imgData = ctx.createImageData(W, H);
+  const data = imgData.data;
+
+  // Map grid to pixels
+  for (let px = 0; px < W; px++) {
+    for (let py = 0; py < H; py++) {
+      const gx = Math.floor(px / cellW);
+      const gy = Math.floor((H - 1 - py) / cellH); // flip Y
+      if (gx < 0 || gx >= NX || gy < 0 || gy >= NY) continue;
+      const k = gy * NX + gx;
+      const idx = (py * W + px) * 4;
+
+      // Base: J-field (inferno-like)
+      const jVal = J[k] / 0.5;
+      let r = jVal * 0.9, g = jVal * 0.3, b = jVal * 0.1;
+
+      // Option 2: Noise floor — only render probability above threshold
+      const density = (psiRe[k]**2 + psiIm[k]**2) * NX * NY;
+      if (density > 0.05) {
+        const glow = Math.min(1, density * 3);
+        r = r * (1-glow) + glow * 0.2;
+        g = g * (1-glow) + glow * 0.85;
+        b = b * (1-glow) + glow * 1.0;
+      }
+
+      // Option 1: Transient breach sparks (fade from red→dark)
+      if (breachTimer[k] > 0) {
+        const spark = breachTimer[k] / 255;
+        r = r * (1-spark) + spark * 1.0;
+        g = g * (1-spark) + spark * 0.2;
+        b = b * (1-spark);
+      }
+
+      data[idx]   = Math.floor(Math.min(255, r * 255));
+      data[idx+1] = Math.floor(Math.min(255, g * 255));
+      data[idx+2] = Math.floor(Math.min(255, b * 255));
+      data[idx+3] = 255;
+    }
+  }
+  ctx.putImageData(imgData, 0, 0);
+
+  // Draw centroid trail
+  if (centroidTrail.length > 1) {
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(255,255,0,0.6)';
+    ctx.lineWidth = 2;
+    ctx.shadowBlur = 8;
+    ctx.shadowColor = '#ffcc00';
+    const first = centroidTrail[0];
+    ctx.moveTo(first.x * cellW, (NY - first.y) * cellH);
+    for (let i = 1; i < centroidTrail.length; i++) {
+      const pt = centroidTrail[i];
+      ctx.lineTo(pt.x * cellW, (NY - pt.y) * cellH);
+    }
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // Current position dot
+    const last = centroidTrail[centroidTrail.length - 1];
+    ctx.beginPath();
+    ctx.arc(last.x * cellW, (NY - last.y) * cellH, 5, 0, Math.PI*2);
+    ctx.fillStyle = '#ffcc00';
+    ctx.fill();
+  }
+
+  // Draw center marker
+  ctx.beginPath();
+  ctx.arc(XC * cellW, (NY - YC) * cellH, 4, 0, Math.PI*2);
+  ctx.fillStyle = '#ff4444';
+  ctx.fill();
+
+  // Frame counter overlay
+  ctx.fillStyle = 'rgba(0,0,0,0.5)';
+  ctx.fillRect(10, 10, 140, 28);
+  ctx.fillStyle = '#00ccff';
+  ctx.font = '13px JetBrains Mono, monospace';
+  ctx.fillText(`Frame: ${frame}`, 18, 29);
+}
+
+// ── Telemetry update ─────────────────────────────────────
+function updateTelemetry() {
+  const c = computeCentroid();
+  document.getElementById('t-frame').textContent = frame;
+
+  let norm2 = 0;
+  for (let k = 0; k < NX*NY; k++) norm2 += psiRe[k]**2 + psiIm[k]**2;
+  document.getElementById('t-norm').textContent = norm2.toFixed(6);
+
+  document.getElementById('t-centroid').textContent = c.r.toFixed(1);
+  const jc = J[Math.floor(YC) * NX + Math.floor(XC)];
+  document.getElementById('t-jcenter').textContent = jc.toExponential(4);
+  document.getElementById('t-breaches').textContent = breachCount;
+  document.getElementById('t-heat').textContent = totalHeat.toFixed(6);
+  document.getElementById('t-entropy').textContent = totalEntropy.toFixed(6);
+}
+
+// ── Logging ──────────────────────────────────────────────
+function addLog(msg) {
+  logEntries.push(msg);
+  const box = document.getElementById('log-box');
+  const div = document.createElement('div');
+  div.className = msg.includes('⚠') ? 'breach' : '';
+  div.textContent = msg;
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+}
+
+// ── Simulation step ──────────────────────────────────────
+function simStep() {
+  const stepsPerFrame = 8;
+  const dt = 0.15;
+  for (let i = 0; i < stepsPerFrame; i++) evolveStep(dt);
+
+  // Apply absorbing sponge layer at boundaries
+  for (let k = 0; k < NX * NY; k++) {
+    psiRe[k] *= dampingMask[k];
+    psiIm[k] *= dampingMask[k];
+  }
+
+  zenoTruncation();
+
+  const c = computeCentroid();
+  centroidTrail.push({ x: c.x, y: c.y });
+  if (centroidTrail.length > 500) centroidTrail.shift();
+
+  frame++;
+  render();
+  updateTelemetry();
+}
+
+// ── Reset ────────────────────────────────────────────────
+function reset(wpX, wpY) {
+  frame = 0;
+  totalHeat = 0;
+  totalEntropy = 0;
+  breachCount = 0;
+  centroidTrail = [];
+  logEntries = [];
+  document.getElementById('log-box').innerHTML = '';
+  breachTimer.fill(0);
+
+  initDampingMask();
+  buildJField();
+  initWavepacket(wpX || XC + 35, wpY || YC);
+
+  render();
+  updateTelemetry();
+  addLog(`Simulation reset. M=${getParams().mass}, κ=${getParams().kappa}, Z_α=${getParams().zalpha}`);
+}
+
+// ── Animation loop ───────────────────────────────────────
+let animId = null;
+function loop() {
+  if (!running) return;
+  simStep();
+  animId = requestAnimationFrame(loop);
+}
+
+// ── Controls ─────────────────────────────────────────────
+document.getElementById('btn-play').addEventListener('click', () => {
+  running = !running;
+  document.getElementById('btn-play').textContent = running ? '⏸ Pause' : '▶ Play';
+  document.getElementById('status-pill').textContent = running ? 'RUNNING' : 'PAUSED';
+  document.getElementById('status-pill').className = 'pill ' + (running ? 'running' : 'paused');
+  if (running) loop();
+});
+
+document.getElementById('btn-step').addEventListener('click', () => {
+  running = false;
+  document.getElementById('btn-play').textContent = '▶ Play';
+  document.getElementById('status-pill').textContent = 'PAUSED';
+  document.getElementById('status-pill').className = 'pill paused';
+  simStep();
+});
+
+document.getElementById('btn-reset').addEventListener('click', () => {
+  running = false;
+  if (animId) cancelAnimationFrame(animId);
+  document.getElementById('btn-play').textContent = '▶ Play';
+  document.getElementById('status-pill').textContent = 'PAUSED';
+  document.getElementById('status-pill').className = 'pill paused';
+  reset();
+});
+
+// Click to launch new wavepacket
+canvas.addEventListener('click', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = W / rect.width;
+  const scaleY = H / rect.height;
+  const px = (e.clientX - rect.left) * scaleX;
+  const py = (e.clientY - rect.top) * scaleY;
+  const gx = Math.floor(px / cellW);
+  const gy = NY - 1 - Math.floor(py / cellH);
+  running = false;
+  if (animId) cancelAnimationFrame(animId);
+  document.getElementById('btn-play').textContent = '▶ Play';
+  document.getElementById('status-pill').textContent = 'PAUSED';
+  document.getElementById('status-pill').className = 'pill paused';
+  reset(gx, gy);
+  addLog(`New wavepacket at (${gx}, ${gy})`);
+});
+
+// Slider value displays
+['mass','kappa','zalpha','speed','sigma'].forEach(name => {
+  const slider = document.getElementById('s-' + name);
+  const display = document.getElementById('v-' + name);
+  slider.addEventListener('input', () => {
+    display.textContent = parseFloat(slider.value).toFixed(name==='zalpha' ? 2 : 1);
+    // Rebuild J-field when mass or kappa change
+    if (name === 'mass' || name === 'kappa') buildJField();
+  });
+});
+
+// ── Init ─────────────────────────────────────────────────
+reset();
+</script>
+</body>
+</html>
