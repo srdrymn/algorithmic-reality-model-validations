@@ -2,8 +2,8 @@
 
 [![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![ATR Paper](https://img.shields.io/badge/ATR%20Paper-10.5281%2Fzenodo.19042891-blue)](https://doi.org/10.5281/zenodo.19042891)
-[![Paper 2](https://img.shields.io/badge/Paper%202-10.5281%2Fzenodo.19050917-blue)](https://doi.org/10.5281/zenodo.19050917)
+[![ATR Paper](https://img.shields.io/badge/ATR%20Paper-10.5281%2Fzenodo.19120294-blue)](https://doi.org/10.5281/zenodo.19120294)
+[![Paper 2](https://img.shields.io/badge/Paper%202-10.5281%2Fzenodo.19120350-blue)](https://doi.org/10.5281/zenodo.19120350)
 
 **Numerical verification of the derivation in:**
 
@@ -12,11 +12,11 @@
 
 Based on the **Algorithmic Theory of Reality (ATR)** framework:
 > S. Yaman, *"The Algorithmic Theory of Reality: Rigorous Mathematical Foundations,"* Zenodo, 2026.
-> DOI: [10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891)
+> DOI: [10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
 
 And the holographic dark energy derivation:
 > S. Yaman, *"Holographic Dark Energy from Algorithmic Thermodynamics: Resolving the Vacuum Catastrophe via the Bennett-Landauer Limit,"* 2026.
-> DOI: [10.5281/zenodo.19050917](https://doi.org/10.5281/zenodo.19050917)
+> DOI: [10.5281/zenodo.19120350](https://doi.org/10.5281/zenodo.19120350)
 
 ---
 
@@ -143,8 +143,8 @@ The script performs 11 computational steps:
 
 ## References
 
-1. S. Yaman, "The Algorithmic Theory of Reality: Rigorous Mathematical Foundations," *Zenodo* (2026). [DOI: 10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891)
-2. S. Yaman, "Holographic Dark Energy from Algorithmic Thermodynamics: Resolving the Vacuum Catastrophe via the Bennett-Landauer Limit," (2026). [DOI: 10.5281/zenodo.19050917](https://doi.org/10.5281/zenodo.19050917)
+1. S. Yaman, "The Algorithmic Theory of Reality: Rigorous Mathematical Foundations," *Zenodo* (2026). [DOI: 10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
+2. S. Yaman, "Holographic Dark Energy from Algorithmic Thermodynamics: Resolving the Vacuum Catastrophe via the Bennett-Landauer Limit," (2026). [DOI: 10.5281/zenodo.19120350](https://doi.org/10.5281/zenodo.19120350)
 3. M. Milgrom, "A modification of the Newtonian dynamics as a possible alternative to the hidden mass hypothesis," *Astrophys. J.* **270**, 365 (1983).
 4. S. S. McGaugh, F. Lelli, and J. M. Schombert, "Radial Acceleration Relation in Rotationally Supported Galaxies," *Phys. Rev. Lett.* **117**, 201101 (2016). [arXiv:1609.05917](https://arxiv.org/abs/1609.05917)
 5. G. W. Gibbons and S. W. Hawking, "Cosmological event horizons, thermodynamics, and particle creation," *Phys. Rev. D* **15**, 2738 (1977).

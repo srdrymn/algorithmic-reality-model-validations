@@ -2,7 +2,7 @@
 
 [![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![ATR Paper](https://img.shields.io/badge/ATR%20Paper-10.5281%2Fzenodo.19042891-blue)](https://doi.org/10.5281/zenodo.19042891)
+[![ATR Paper](https://img.shields.io/badge/ATR%20Paper-10.5281%2Fzenodo.19120294-blue)](https://doi.org/10.5281/zenodo.19120294)
 
 **Numerical verification of the derivation in:**
 
@@ -11,7 +11,7 @@
 
 Based on the **Algorithmic Theory of Reality (ATR)** framework:
 > S. Yaman, *"The Algorithmic Theory of Reality: Rigorous Mathematical Foundations,"* Zenodo, 2026.
-> DOI: [10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891)
+> DOI: [10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
 
 ---
 
@@ -104,7 +104,7 @@ The key difference: in the local protocol, each particle's data is independent. 
 
 | Paper | Topic | Repo |
 |-------|-------|------|
-| ATR (foundations) | Emergent spacetime & gravity | [zenodo.19042891](https://doi.org/10.5281/zenodo.19042891) |
+| ATR (foundations) | Emergent spacetime & gravity | [zenodo.19120294](https://doi.org/10.5281/zenodo.19120294) |
 | Dark Energy | Cosmological constant / vacuum catastrophe | [atr-holographic-dark-energy](https://github.com/srdrymn/atr-holographic-dark-energy) |
 | MOND Scale | Galactic acceleration anomaly | [atr-verifiy-mond-scale](https://github.com/srdrymn/atr-verifiy-mond-scale) |
 | Zeno Threshold | Born Rule / wavefunction collapse | [atr-wavefunction-collapse](https://github.com/srdrymn/atr-wavefunction-collapse) |
@@ -124,7 +124,7 @@ The key difference: in the local protocol, each particle's data is independent. 
 5. A. Aspect et al., "Experimental realization of EPR-Bohm Gedankenexperiment," *Phys. Rev. Lett.* **49**, 91 (1982).
 6. R. Landauer, "Irreversibility and heat generation in the computing process," *IBM J. Res. Dev.* **5**, 183 (1961).
 7. C. H. Bennett, "The thermodynamics of computation — a review," *Int. J. Theor. Phys.* **21**, 905 (1982).
-8. S. Yaman, "The Algorithmic Theory of Reality," *Zenodo* (2026). [DOI: 10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891)
+8. S. Yaman, "The Algorithmic Theory of Reality," *Zenodo* (2026). [DOI: 10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
 9. S. Yaman, "The Zeno Threshold: Wavefunction Collapse and the Emergence of Time via Landauer Erasure Limits," (2026).
 
 ## License

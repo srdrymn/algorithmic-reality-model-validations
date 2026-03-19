@@ -2,8 +2,8 @@
 
 [![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![ATR Paper](https://img.shields.io/badge/ATR%20Paper-10.5281%2Fzenodo.19042891-blue)](https://doi.org/10.5281/zenodo.19042891)
-[![Paper 2](https://img.shields.io/badge/Paper%202-10.5281%2Fzenodo.19050917-blue)](https://doi.org/10.5281/zenodo.19050917)
+[![ATR Paper](https://img.shields.io/badge/ATR%20Paper-10.5281%2Fzenodo.19120294-blue)](https://doi.org/10.5281/zenodo.19120294)
+[![Paper 2](https://img.shields.io/badge/Paper%202-10.5281%2Fzenodo.19120350-blue)](https://doi.org/10.5281/zenodo.19120350)
 
 **Numerical verification of the derivation in:**
 
@@ -12,12 +12,12 @@
 
 Based on the **Algorithmic Theory of Reality (ATR)** framework:
 > S. Yaman, *"The Algorithmic Theory of Reality: Rigorous Mathematical Foundations,"* Zenodo, 2026.
-> DOI: [10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891)
+> DOI: [10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
 
 And the preceding derivations in the same series:
-> S. Yaman, *"Holographic Dark Energy from Algorithmic Thermodynamics,"* 2026. DOI: [10.5281/zenodo.19050917](https://doi.org/10.5281/zenodo.19050917)
+> S. Yaman, *"Holographic Dark Energy from Algorithmic Thermodynamics,"* 2026. DOI: [10.5281/zenodo.19120350](https://doi.org/10.5281/zenodo.19120350)
 >
-> S. Yaman, *"The Galactic Acceleration Anomaly as an Algorithmic Noise Floor: Deriving the MOND Scale from Entropic Thermodynamics,"* 2026. DOI:[10.5281/zenodo.19054817](https://doi.org/10.5281/zenodo.19054817)
+> S. Yaman, *"The Galactic Acceleration Anomaly as an Algorithmic Noise Floor: Deriving the MOND Scale from Entropic Thermodynamics,"* 2026. DOI:[10.5281/zenodo.19120376](https://doi.org/10.5281/zenodo.19120376)
 >
 > S. Yaman, *"Wavefunction Collapse as Algorithmic Garbage Collection: Deriving the Born Rule from the Bennett-Landauer Bound,"* 2026. DOI:[10.5281/zenodo.19057971](https://doi.org/10.5281/zenodo.19057971)
 
@@ -155,7 +155,7 @@ This script is part of the computational verification suite for the ATR framewor
 
 | Paper | Topic | Repo |
 |-------|-------|------|
-| ATR (foundations) | Emergent spacetime & gravity from information theory | [zenodo.19042891](https://doi.org/10.5281/zenodo.19042891) |
+| ATR (foundations) | Emergent spacetime & gravity from information theory | [zenodo.19120294](https://doi.org/10.5281/zenodo.19120294) |
 | Paper 2 | Cosmological constant / dark energy | [atr-holographic-dark-energy](https://github.com/srdrymn/atr-holographic-dark-energy) |
 | Paper 3 | MOND acceleration scale | [atr-verifiy-mond-scale](https://github.com/srdrymn/atr-verifiy-mond-scale) |
 | Paper 4 | Born Rule / wavefunction collapse | [atr-wavefunction-collapse](https://github.com/srdrymn/atr-wavefunction-collapse) |
@@ -165,9 +165,9 @@ This script is part of the computational verification suite for the ATR framewor
 
 ## References
 
-1. S. Yaman, "The Algorithmic Theory of Reality: Rigorous Mathematical Foundations," *Zenodo* (2026). [DOI: 10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891)
-2. S. Yaman, "Holographic Dark Energy from Algorithmic Thermodynamics," (2026). [DOI: 10.5281/zenodo.19050917](https://doi.org/10.5281/zenodo.19050917)
-3. S. Yaman, "The Galactic Acceleration Anomaly as an Algorithmic Noise Floor," (2026). [DOI: 10.5281/zenodo.19054817](https://doi.org/10.5281/zenodo.19054817)
+1. S. Yaman, "The Algorithmic Theory of Reality: Rigorous Mathematical Foundations," *Zenodo* (2026). [DOI: 10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
+2. S. Yaman, "Holographic Dark Energy from Algorithmic Thermodynamics," (2026). [DOI: 10.5281/zenodo.19120350](https://doi.org/10.5281/zenodo.19120350)
+3. S. Yaman, "The Galactic Acceleration Anomaly as an Algorithmic Noise Floor," (2026). [DOI: 10.5281/zenodo.19120376](https://doi.org/10.5281/zenodo.19120376)
 4. S. Yaman, "Wavefunction Collapse as Algorithmic Garbage Collection," (2026). [DOI: 10.5281/zenodo.19057971](https://doi.org/10.5281/zenodo.19057971)
 5. S. W. Hawking, "Particle creation by black holes," *Commun. Math. Phys.* **43**, 199 (1975).
 6. J. D. Bekenstein, "Universal upper bound on the entropy-to-energy ratio for bounded systems," *Phys. Rev. D* **23**, 287 (1981).

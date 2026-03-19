@@ -2,7 +2,7 @@
 
 [![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![DOI](https://img.shields.io/badge/ATR%20Paper-10.5281%2Fzenodo.19042891-blue)](https://doi.org/10.5281/zenodo.19042891)
+[![DOI](https://img.shields.io/badge/ATR%20Paper-10.5281%2Fzenodo.19120294-blue)](https://doi.org/10.5281/zenodo.19120294)
 
 **Numerical verification of the derivation in:**
 
@@ -11,7 +11,7 @@
 
 Based on the **Algorithmic Theory of Reality (ATR)** framework:
 > S. Yaman, *"The Algorithmic Theory of Reality: Rigorous Mathematical Foundations,"* Zenodo, 2026.
-> DOI: [10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891)
+> DOI: [10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
 
 ---
 
@@ -149,7 +149,7 @@ python atr_full_chain_audit.py   # 21 dependency assertions + 68 computed checks
 ## References
 
 1. T. Jacobson, "Thermodynamics of Spacetime: The Einstein Equation of State," *Phys. Rev. Lett.* **75**, 1260 (1995).
-2. S. Yaman, "The Algorithmic Theory of Reality: Rigorous Mathematical Foundations," *Zenodo* (2026). [DOI: 10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891)
+2. S. Yaman, "The Algorithmic Theory of Reality: Rigorous Mathematical Foundations," *Zenodo* (2026). [DOI: 10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
 3. M. Takesaki, "Tomita's Theory of Modular Hilbert Algebras and its Applications," *Lecture Notes in Mathematics* **128**, Springer (1970).
 4. A. Connes and C. Rovelli, "Von Neumann Algebra Automorphisms and Time-Thermodynamics Relation," *Class. Quantum Grav.* **11**, 2899 (1994).
 5. J. J. Bisognano and E. H. Wichmann, "On the Duality Condition for Quantum Fields," *J. Math. Phys.* **17**, 303 (1976).

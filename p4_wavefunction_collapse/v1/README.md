@@ -2,8 +2,8 @@
 
 [![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![ATR Paper](https://img.shields.io/badge/ATR%20Paper-10.5281%2Fzenodo.19042891-blue)](https://doi.org/10.5281/zenodo.19042891)
-[![Paper 2](https://img.shields.io/badge/Paper%202-10.5281%2Fzenodo.19050917-blue)](https://doi.org/10.5281/zenodo.19050917)
+[![ATR Paper](https://img.shields.io/badge/ATR%20Paper-10.5281%2Fzenodo.19120294-blue)](https://doi.org/10.5281/zenodo.19120294)
+[![Paper 2](https://img.shields.io/badge/Paper%202-10.5281%2Fzenodo.19120350-blue)](https://doi.org/10.5281/zenodo.19120350)
 
 **Numerical verification of the derivation in:**
 
@@ -12,10 +12,10 @@
 
 Based on the **Algorithmic Theory of Reality (ATR)** framework:
 > S. Yaman, *"The Algorithmic Theory of Reality: Rigorous Mathematical Foundations,"* Zenodo, 2026.
-> DOI: [10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891)
+> DOI: [10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
 
 And the preceding derivations:
-> S. Yaman, *"Holographic Dark Energy from Algorithmic Thermodynamics,"* 2026. DOI: [10.5281/zenodo.19050917](https://doi.org/10.5281/zenodo.19050917)
+> S. Yaman, *"Holographic Dark Energy from Algorithmic Thermodynamics,"* 2026. DOI: [10.5281/zenodo.19120350](https://doi.org/10.5281/zenodo.19120350)
 >
 > S. Yaman, *"The Galactic Acceleration Anomaly as an Algorithmic Noise Floor: Deriving the MOND Scale from Entropic Thermodynamics,"* 2026.
 
@@ -130,8 +130,8 @@ The script performs 10 computational checks:
 
 ## References
 
-1. S. Yaman, "The Algorithmic Theory of Reality: Rigorous Mathematical Foundations," *Zenodo* (2026). [DOI: 10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891)
-2. S. Yaman, "Holographic Dark Energy from Algorithmic Thermodynamics: Resolving the Vacuum Catastrophe via the Bennett-Landauer Limit," (2026). [DOI: 10.5281/zenodo.19050917](https://doi.org/10.5281/zenodo.19050917)
+1. S. Yaman, "The Algorithmic Theory of Reality: Rigorous Mathematical Foundations," *Zenodo* (2026). [DOI: 10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
+2. S. Yaman, "Holographic Dark Energy from Algorithmic Thermodynamics: Resolving the Vacuum Catastrophe via the Bennett-Landauer Limit," (2026). [DOI: 10.5281/zenodo.19120350](https://doi.org/10.5281/zenodo.19120350)
 3. S. Yaman, "The Galactic Acceleration Anomaly as an Algorithmic Noise Floor: Deriving the MOND Scale from Entropic Thermodynamics," (2026).
 4. E. Joos and H. D. Zeh, "The emergence of classical properties through interaction with the environment," *Z. Phys. B* **59**, 223 (1985).
 5. W. H. Zurek, "Decoherence, einselection, and the quantum origins of the classical," *Rev. Mod. Phys.* **75**, 715 (2003).

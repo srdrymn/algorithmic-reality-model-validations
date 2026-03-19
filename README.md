@@ -299,15 +299,15 @@ algorithmic-reality-model-validations/
 
 | # | Title | DOI |
 |---|-------|-----|
-| P1 | [The Algorithmic Theory of Reality: Rigorous Mathematical Foundations](https://doi.org/10.5281/zenodo.19042891) | [10.5281/zenodo.19042891](https://doi.org/10.5281/zenodo.19042891) |
-| P2 | [Holographic Dark Energy from Algorithmic Thermodynamics: Resolving the Vacuum Catastrophe via the Bennett-Landauer Limit](https://doi.org/10.5281/zenodo.19050917) | [10.5281/zenodo.19050917](https://doi.org/10.5281/zenodo.19050917) |
-| P3 | [The Galactic Acceleration Anomaly as an Algorithmic Noise Floor: Deriving the MOND Scale from Entropic Thermodynamics](https://doi.org/10.5281/zenodo.19054817) | [10.5281/zenodo.19054817](https://doi.org/10.5281/zenodo.19054817) |
-| P4 | [The Zeno Threshold: Wavefunction Collapse and the Emergence of Time via Landauer Erasure Limits](https://doi.org/10.5281/zenodo.19079576) | [10.5281/zenodo.19079576](https://doi.org/10.5281/zenodo.19079576) |
-| P5 | [Algorithmic Data Compression in Emergent Spacetime: Resolving the Black Hole Information Paradox via Thermodynamic Graph Dynamics](https://doi.org/10.5281/zenodo.19058635) | [10.5281/zenodo.19058635](https://doi.org/10.5281/zenodo.19058635) |
-| P6 | [Entanglement as Backend Memory Aliasing: Resolving the EPR Paradox via Algorithmic Graph Routing in the Singleton](https://doi.org/10.5281/zenodo.19102619) | [10.5281/zenodo.19102619](https://doi.org/10.5281/zenodo.19102619) |
-| P7 | [Interference and Erasure on a Discrete Lattice: A Computational Demonstration of the Zeno Threshold in the Double-Slit Experiment](https://doi.org/10.5281/zenodo.19091708) | [10.5281/zenodo.19091708](https://doi.org/10.5281/zenodo.19091708) |
-| P8 | [Why Complex Numbers? Deriving the Hilbert Space Structure from the Zeno Threshold](https://doi.org/10.5281/zenodo.19095238) | [10.5281/zenodo.19095238](https://doi.org/10.5281/zenodo.19095238) |
-| P9 | [Emergent Lorentzian Spacetime from Informational Geometry — Unifying the QFIM Spatial Metric with Tomita-Takesaki Temporal Flow](https://doi.org/10.5281/zenodo.19104254) | [10.5281/zenodo.19104254](https://doi.org/10.5281/zenodo.19104254) |
+| P1 | [The Algorithmic Theory of Reality: Rigorous Mathematical Foundations](https://doi.org/10.5281/zenodo.19120294) | [10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294) |
+| P2 | [Holographic Dark Energy from Algorithmic Thermodynamics: Resolving the Vacuum Catastrophe via the Bennett-Landauer Limit](https://doi.org/10.5281/zenodo.19120350) | [10.5281/zenodo.19120350](https://doi.org/10.5281/zenodo.19120350) |
+| P3 | [The Galactic Acceleration Anomaly as an Algorithmic Noise Floor: Deriving the MOND Scale from Entropic Thermodynamics](https://doi.org/10.5281/zenodo.19120376) | [10.5281/zenodo.19120376](https://doi.org/10.5281/zenodo.19120376) |
+| P4 | [The Zeno Threshold: Wavefunction Collapse and the Emergence of Time via Landauer Erasure Limits](https://doi.org/10.5281/zenodo.19120401) | [10.5281/zenodo.19120401](https://doi.org/10.5281/zenodo.19120401) |
+| P5 | [Algorithmic Data Compression in Emergent Spacetime: Resolving the Black Hole Information Paradox via Thermodynamic Graph Dynamics](https://doi.org/10.5281/zenodo.19120527) | [10.5281/zenodo.19120527](https://doi.org/10.5281/zenodo.19120527) |
+| P6 | [Entanglement as Backend Memory Aliasing: Resolving the EPR Paradox via Algorithmic Graph Routing in the Singleton](https://doi.org/10.5281/zenodo.19120514) | [10.5281/zenodo.19120514](https://doi.org/10.5281/zenodo.19120514) |
+| P7 | [Interference and Erasure on a Discrete Lattice: A Computational Demonstration of the Zeno Threshold in the Double-Slit Experiment](https://doi.org/10.5281/zenodo.19120465) | [10.5281/zenodo.19120465](https://doi.org/10.5281/zenodo.19120465) |
+| P8 | [Why Complex Numbers? Deriving the Hilbert Space Structure from the Zeno Threshold](https://doi.org/10.5281/zenodo.19120475) | [10.5281/zenodo.19120475](https://doi.org/10.5281/zenodo.19120475) |
+| P9 | [Emergent Lorentzian Spacetime from Informational Geometry — Unifying the QFIM Spatial Metric with Tomita-Takesaki Temporal Flow](https://doi.org/10.5281/zenodo.19120520) | [10.5281/zenodo.19120520](https://doi.org/10.5281/zenodo.19120520) |
 | P10 | [The Algorithmic Reality Model: Unifying Quantum Mechanics and General Relativity via the Zeno Threshold and Thermodynamic Graph Routing](https://doi.org/10.5281/zenodo.19111233) | [10.5281/zenodo.19111233](https://doi.org/10.5281/zenodo.19111233) |
 | P11 | [Multi-Body Data Condensation Dynamics in the Algorithmic Reality Model: Computational Validation of J-Field N-Body Mergers](https://doi.org/10.5281/zenodo.19117800) | [10.5281/zenodo.19117800](https://doi.org/10.5281/zenodo.19117800) |
 

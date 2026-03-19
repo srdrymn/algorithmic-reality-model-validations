@@ -3,6 +3,9 @@
 Computational validation suite for:
 
 > S. Yaman, "The Algorithmic Theory of Reality: Rigorous Mathematical Foundations," (2026).
+> [DOI: 10.5281/zenodo.19120294](https://doi.org/10.5281/zenodo.19120294)
+
+[![Paper DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19120294-blue)](https://doi.org/10.5281/zenodo.19120294)
 
 ## Contents
 
