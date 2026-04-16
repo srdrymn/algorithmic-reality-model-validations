@@ -1,0 +1,82 @@
+{
+  "config": {
+    "omega_ghz": 5.0,
+    "t2_ns": 20.0,
+    "nu_alpha_ghz": 1.0,
+    "clock_jitter_ps": 50.0,
+    "n_shots": 10000,
+    "n_experiments": 500,
+    "control_omega_ghz": 5.1
+  },
+  "self_check": {
+    "qrt_vs_analytic_max_abs_error": 0.0
+  },
+  "nominal_model": {
+    "transition_matrix": [
+      [
+        0.975614712250357,
+        0.024385287749642992
+      ],
+      [
+        0.024385287749642992,
+        0.975614712250357
+      ]
+    ],
+    "step_correlator_ticks": [
+      1.0,
+      0.951229424500714,
+      0.9048374180359595,
+      0.8607079764250578,
+      0.8187307530779819,
+      0.778800783071405,
+      0.740818220681718,
+      0.7046880897187136
+    ],
+    "max_abs_diff_vs_floor_unjittered": 1.1102230246251565e-16,
+    "max_abs_diff_vs_floor_jittered": 3.3306690738754696e-16,
+    "peak_residual_vs_smooth_qm": 1.9950124791926824,
+    "rms_residual_vs_smooth_qm": 1.067306801876829,
+    "peak_snr_upper_bound": 199.50124791926825,
+    "rms_snr_upper_bound": 106.7306801876829
+  },
+  "off_resonant_control": {
+    "omega_ghz": 5.1,
+    "transition_matrix": [
+      [
+        0.8847803849852907,
+        0.11521961501470934
+      ],
+      [
+        0.11521961501470934,
+        0.8847803849852907
+      ]
+    ],
+    "max_abs_diff_vs_floor_unjittered": 1.048708065464755
+  },
+  "pseudoexperiment_discrimination": {
+    "test_stat_clocked": {
+      "median": 1764914.6647837085,
+      "p05": 1762677.9077656085,
+      "p95": 1766998.4973733393
+    },
+    "test_stat_qm": {
+      "median": -6436087.816173455,
+      "p05": -6449324.968139326,
+      "p95": -6423275.433900129
+    },
+    "best_fit_qm_on_clocked_omega_ghz": {
+      "median": 5.45,
+      "p05": 4.5125,
+      "p95": 5.45
+    },
+    "best_fit_qm_on_clocked_t2_ns": {
+      "median": 10.0,
+      "p05": 10.0,
+      "p95": 10.0
+    },
+    "threshold_95_false_positive": -6423275.433900129,
+    "threshold_99_false_positive": -6416297.527429135,
+    "power_at_95_threshold": 1.0,
+    "power_at_99_threshold": 1.0
+  }
+}
